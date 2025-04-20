@@ -14,6 +14,9 @@ var jump_time = 0.0  # Таймер для прыжка
 
 @export var target_position: Vector3 = Vector3(-3.067, 0.526, -3.11) 
 
+@export var object_scene: PackedScene
+
+
 func _physics_process(delta: float) -> void:
 	# Применяем гравитацию
 	if not is_on_floor():

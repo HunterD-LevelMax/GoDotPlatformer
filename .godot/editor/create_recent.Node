@@ -1,4 +1,5 @@
-StaticBody3D
-MeshInstance3D
+Node3D
 CollisionShape3D
+MeshInstance3D
+StaticBody3D
 Area3D

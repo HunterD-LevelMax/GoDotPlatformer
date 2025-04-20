@@ -1,5 +1,6 @@
-[gd_scene load_steps=24 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=25 format=3 uid="uid://dcpb81d1t55qc"]
 
+[ext_resource type="Script" path="res://Levels/level.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Levels/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Player/player.tscn" id="2_1pnx1"]
 [ext_resource type="Texture2D" uid="uid://cr4ts3luulbx0" path="res://Levels/fire.png" id="3_yctsy"]
@@ -72,6 +73,8 @@ size = Vector3(1, 1, 1.93066)
 [sub_resource type="BoxMesh" id="BoxMesh_u87hl"]
 
 [node name="Level" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70082, 0, 0)
+script = ExtResource("1_1ykia")
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42308, 0.496697, -141.669)
@@ -93,7 +96,7 @@ skeleton = NodePath("../..")
 [node name="palka" type="StaticBody3D" parent="."]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="palka"]
-transform = Transform3D(0.100145, 0, 0, 0, 0.0904222, 0, 0, 0, -0.68696, -0.65, 0.553445, -1.28559)
+transform = Transform3D(0.100145, 0, 0, 0, 0.0904222, 0, 0, 0, -0.68696, -0.65, 0.553445, -1.1549)
 mesh = SubResource("BoxMesh_1p1gu")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="palka"]
@@ -127,7 +130,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.14095, -5.35234, 3.75714, 8.18
 shape = SubResource("BoxShape3D_umhn1")
 
 [node name="KURENAI_lowpoly" parent="." instance=ExtResource("6_vjdp0")]
-transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -3.06685, 0.525806, -3.10986)
+transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -2.86542, 0.525806, -3.40103)
 
 [node name="KurenaiLowpoly" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6932, 0.44442, -2.06601)
@@ -164,5 +167,8 @@ shape = SubResource("BoxShape3D_d73yt")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport"]
 transform = Transform3D(16.88, 0, 0, 0, 1, 0, 0, 0, 4.13672, 0.12608, -18.5965, -14.9129)
 mesh = SubResource("BoxMesh_u87hl")
+
+[node name="Spawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.11629, 1.71456, 0)
 
 [connection signal="body_entered" from="Teleport" to="Player" method="_on_teleport_body_entered"]
