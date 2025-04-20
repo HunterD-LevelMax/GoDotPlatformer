@@ -1,14 +1,33 @@
-[gd_scene load_steps=3 format=3 uid="uid://c7s4louvn7b47"]
+[gd_scene load_steps=6 format=3 uid="uid://c7s4louvn7b47"]
+
+[ext_resource type="Script" path="res://box.gd" id="1_iujkm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oejkt"]
+albedo_color = Color(0.756119, 0.238887, 0.659379, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_ksqsw"]
+material = SubResource("StandardMaterial3D_oejkt")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_omhtp"]
+size = Vector3(1.03699, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2ok3o"]
 
 [node name="StaticBody3D" type="StaticBody3D"]
+script = ExtResource("1_iujkm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("BoxMesh_ksqsw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.00397, 0, 0, 0, 1.01588, 0, 0, 0, 1, 0, 0, 0)
+transform = Transform3D(1.11969, 0, 0, 0, 1.07576, 0, 0, 0, 1.22227, 0.0207072, 0, 0)
 shape = SubResource("BoxShape3D_omhtp")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(-0.396505, 0, 0, 0, 1.11028, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(2.33336, 0, 0, 0, 1.14089, 0, 0, 0, 0.79159, 0, 0, 0)
+shape = SubResource("BoxShape3D_2ok3o")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

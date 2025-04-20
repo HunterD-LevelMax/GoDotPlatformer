@@ -2,3 +2,4 @@ res://Levels/level.tscn
 res://player.gd
 res://box.tscn
 res://Levels/level.gd
+res://box.gd

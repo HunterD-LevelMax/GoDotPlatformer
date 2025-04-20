@@ -17,6 +17,6 @@ func spawn_box(spawn_position: Vector3):
 
 func _on_timer_timeout() -> void:
 	var x = randf_range(-10.0, 10.0)   # Замените диапазон на свой
-	var y =  0.5                     # Например, высота над землёй
+	var y =  1.2                   # Например, высота над землёй
 	var z = randf_range(-10.0, 10.0)   # Замените диапазон на свой
 	spawn_box(Vector3(x,y,z))
