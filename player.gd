@@ -12,6 +12,8 @@ var jump_time = 0.0  # Таймер для прыжка
 @onready var skin: Node3D = $Skin
 @onready var animation_player: AnimationPlayer = $Skin/AnimationPlayer
 
+@export var target_position: Vector3 = Vector3(2.423, 0.497, -141.669) 
+
 func _physics_process(delta: float) -> void:
 	# Применяем гравитацию
 	if not is_on_floor():
@@ -76,3 +78,7 @@ func _physics_process(delta: float) -> void:
 
 	# Перемещаем персонажа
 	move_and_slide()
+
+func _on_teleport_body_entered(body: Node3D) -> void:
+	if body.name == "Player":
+		body.global_transform.origin = target_position

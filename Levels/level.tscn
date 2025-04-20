@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=24 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Levels/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Player/player.tscn" id="2_1pnx1"]
@@ -64,10 +64,17 @@ metallic = 0.16
 [sub_resource type="BoxShape3D" id="BoxShape3D_umhn1"]
 size = Vector3(14.8221, 6.54419, 2.86597)
 
+[sub_resource type="BoxMesh" id="BoxMesh_6c3eu"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d73yt"]
+size = Vector3(1, 1, 1.93066)
+
+[sub_resource type="BoxMesh" id="BoxMesh_u87hl"]
+
 [node name="Level" type="Node3D"]
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42308, 0.496697, -5.71786)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42308, 0.496697, -141.669)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
@@ -120,8 +127,45 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.14095, -5.35234, 3.75714, 8.18
 shape = SubResource("BoxShape3D_umhn1")
 
 [node name="KURENAI_lowpoly" parent="." instance=ExtResource("6_vjdp0")]
-transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -5.1521, 0.891313, -3.10986)
+transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -5.1521, 0.525806, -3.10986)
 
 [node name="KurenaiLowpoly" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6932, 0.44442, -2.06601)
 mesh = ExtResource("7_k5ey0")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.87762, 2.64776, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+transform = Transform3D(0.424292, 0, 0, 0, 5.12903, 0, 0, 0, 29.641, 0.223629, 0.753106, 4.88636)
+mesh = SubResource("BoxMesh_6c3eu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+
+[node name="Plane2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -239.112)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, -1.13159)
+shape = SubResource("BoxShape3D_aq12j")
+
+[node name="Plane3D" type="MeshInstance3D" parent="Plane2"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ep3b")
+skeleton = NodePath("../..")
+
+[node name="Teleport" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3393, -120.873)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
+transform = Transform3D(13.9174, 0, 0, 0, 1, 0, 0, 0, 2.58115, 0, -18.7782, -14.8136)
+shape = SubResource("BoxShape3D_d73yt")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Teleport"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport/StaticBody3D"]
+transform = Transform3D(16.88, 0, 0, 0, 1, 0, 0, 0, 4.13672, 0.12608, -18.5965, -14.9129)
+mesh = SubResource("BoxMesh_u87hl")
+skeleton = NodePath("../..")
+
+[connection signal="body_entered" from="Teleport" to="Player" method="_on_teleport_body_entered"]
