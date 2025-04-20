@@ -12,7 +12,7 @@ var jump_time = 0.0  # Таймер для прыжка
 @onready var skin: Node3D = $Skin
 @onready var animation_player: AnimationPlayer = $Skin/AnimationPlayer
 
-@export var target_position: Vector3 = Vector3(2.423, 0.497, -141.669) 
+@export var target_position: Vector3 = Vector3(-3.067, 0.526, -3.11) 
 
 func _physics_process(delta: float) -> void:
 	# Применяем гравитацию
