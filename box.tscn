@@ -14,6 +14,7 @@ size = Vector3(1.03699, 1, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_2ok3o"]
 
 [node name="StaticBody3D" type="StaticBody3D"]
+transform = Transform3D(1.56574, 0, 0, 0, 1.25549, 0, 0, 0, 1.83868, 0, 0, 0)
 script = ExtResource("1_iujkm")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

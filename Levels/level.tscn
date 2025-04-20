@@ -83,7 +83,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70082, 0, 0)
 script = ExtResource("1_1ykia")
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.42308, 0.496697, -141.669)
+transform = Transform3D(-0.999754, 0, -0.0221813, 0, 1, 0, 0.0221813, 0, -0.999754, 2.42308, 0.496697, -141.669)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
@@ -184,7 +184,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15323, 0)
 mesh = SubResource("PlaneMesh_u7jj0")
 
 [node name="Timer" type="Timer" parent="Spawn1"]
-wait_time = 2.5
 autostart = true
 
 [node name="Spawn2" type="Node3D" parent="."]
