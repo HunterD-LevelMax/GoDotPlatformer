@@ -1,5 +1,7 @@
 extends StaticBody3D
 
+signal box_destroyed
+
 const COLOR_A = Color(1, 0, 0)    # Красный
 const COLOR_B = Color(1, 1, 0)    # Жёлтый
 
@@ -31,5 +33,7 @@ func blink_and_destroy() -> void:
 		color_toggle = not color_toggle
 		await get_tree().create_timer(interval).timeout
 		t += interval
-
+		
+	emit_signal("box_destroyed")  # Сигнал о разрушении
+	
 	queue_free()

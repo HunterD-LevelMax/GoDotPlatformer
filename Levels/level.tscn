@@ -123,33 +123,34 @@ gravity = Vector3(0, 1, 0)
 scale_amount_curve = SubResource("Curve_01v4t")
 color_ramp = SubResource("Gradient_o77so")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="ShopBulding" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9639, 0, 0)
 
-[node name="Shop-1-shopBuilding2" type="MeshInstance3D" parent="StaticBody3D"]
+[node name="Shop-1-shopBuilding2" type="MeshInstance3D" parent="ShopBulding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29307, 4.00542, 7.67621)
 material_override = SubResource("StandardMaterial3D_k6g2h")
 mesh = ExtResource("5_iqyun")
 skeleton = NodePath("../../Plane")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShopBulding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.14095, -5.35234, 3.75714, 8.18517)
 shape = SubResource("BoxShape3D_umhn1")
 
 [node name="KURENAI_lowpoly" parent="." instance=ExtResource("6_vjdp0")]
-transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -2.86542, 0.525806, -3.40103)
+transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -18.8051, 0.525806, -3.40103)
 
 [node name="KurenaiLowpoly" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.6932, 0.44442, -2.06601)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6877, 0.44442, -2.06601)
 mesh = ExtResource("7_k5ey0")
 
-[node name="StaticBody3D2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.87762, 2.64776, 0)
+[node name="Wall" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.2672, 2.64776, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D2"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
 transform = Transform3D(0.424292, 0, 0, 0, 5.12903, 0, 0, 0, 29.641, 0.223629, 0.753106, 4.88636)
 mesh = SubResource("BoxMesh_6c3eu")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 
 [node name="Plane2" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -239.112)
@@ -203,6 +204,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.08769, 1.67089, -3.98742)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8963, -1.12432, -2.11726)
 mesh = SubResource("PlaneMesh_u7jj0")
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="ScoreText" type="Label" parent="UserInterface"]
+offset_left = 13.0
+offset_top = 11.0
+offset_right = 334.0
+offset_bottom = 159.0
+theme_override_font_sizes/font_size = 20
+text = "Score"
 
 [connection signal="body_entered" from="Teleport" to="Player" method="_on_teleport_body_entered"]
 [connection signal="timeout" from="Spawn1/Timer" to="." method="_on_timer_timeout"]

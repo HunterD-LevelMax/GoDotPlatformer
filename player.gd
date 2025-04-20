@@ -1,8 +1,8 @@
 extends CharacterBody3D
 
-const SPEED = 5.0
-const JUMP_VELOCITY = 5
-const GRAVITY = 9.8  
+const SPEED = 6.0
+const JUMP_VELOCITY = 6
+const GRAVITY = 9.2  
 
 var run = false
 var is_jumping = false
@@ -16,6 +16,7 @@ var jump_time = 0.0  # Таймер для прыжка
 
 @export var object_scene: PackedScene
 
+var score = 0
 
 func _physics_process(delta: float) -> void:
 	# Применяем гравитацию
@@ -28,7 +29,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 		is_jumping = true
-		jump_time = 0.5  # Фиксируем время прыжка
+		jump_time = 0.1  # Фиксируем время прыжка
 		animation_player.play("Jump/mixamo_com")
 
 	# Обновляем таймер прыжка
@@ -85,3 +86,4 @@ func _physics_process(delta: float) -> void:
 func _on_teleport_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
 		body.global_transform.origin = target_position
+		
