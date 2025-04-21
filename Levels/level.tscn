@@ -1,13 +1,12 @@
 [gd_scene load_steps=27 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_1ykia"]
-[ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Levels/texture_01.png" id="1_eopvo"]
+[ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/texture_01.png" id="1_eopvo"]
 [ext_resource type="PackedScene" uid="uid://draoidsqq725s" path="res://Player/player.tscn" id="2_1pnx1"]
-[ext_resource type="Texture2D" uid="uid://cr4ts3luulbx0" path="res://Levels/fire.png" id="3_yctsy"]
-[ext_resource type="Texture2D" uid="uid://dndrsx7f1hgg7" path="res://Levels/Shop-0-ShopBuilding_1.png" id="4_3ntly"]
-[ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Levels/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
-[ext_resource type="PackedScene" uid="uid://sjuaual2fad8" path="res://Player/kurenai_asset/KURENAI_lowpoly.blend" id="6_vjdp0"]
-[ext_resource type="ArrayMesh" uid="uid://xcmfnx7ibmvg" path="res://Player/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
+[ext_resource type="Texture2D" uid="uid://cr4ts3luulbx0" path="res://Assets/fire.png" id="3_yctsy"]
+[ext_resource type="Texture2D" uid="uid://dndrsx7f1hgg7" path="res://Assets/Shop-0-ShopBuilding_1.png" id="4_3ntly"]
+[ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Assets/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
+[ext_resource type="ArrayMesh" uid="uid://xcmfnx7ibmvg" path="res://Assets/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
 
@@ -67,28 +66,31 @@ size = Vector3(14.8221, 6.54419, 2.86597)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6c3eu"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_d73yt"]
-size = Vector3(1, 1, 1.93066)
-
-[sub_resource type="BoxMesh" id="BoxMesh_u87hl"]
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxrh"]
 albedo_color = Color(0.745098, 0.117647, 0.0666667, 1)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_u7jj0"]
 material = SubResource("StandardMaterial3D_bfxrh")
 
+[sub_resource type="TubeTrailMesh" id="TubeTrailMesh_hqw7a"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbebs"]
+albedo_color = Color(0.358563, 0.492831, 0.55788, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6txjf"]
+
 [node name="Level" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70082, 0, 0)
 script = ExtResource("1_1ykia")
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
-transform = Transform3D(-0.999754, 0, -0.0221813, 0, 1, 0, 0.0221813, 0, -0.999754, 2.42308, 0.496697, -141.669)
+transform = Transform3D(0.999648, 0, -0.0265433, 0, 1, 0, 0.0265433, 0, 0.999648, -2.18498, 0.451721, -53.9276)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
 
 [node name="Plane" type="StaticBody3D" parent="."]
+transform = Transform3D(0.363437, 0, 0, 0, 0.790009, 0, 0, 0, 0.354411, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
 transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, -1.13159)
@@ -100,6 +102,7 @@ mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
 
 [node name="palka" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4337, -0.0827556, 26.6528)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="palka"]
 transform = Transform3D(0.100145, 0, 0, 0, 0.0904222, 0, 0, 0, -0.68696, -0.65, 0.553445, -1.1549)
@@ -124,7 +127,7 @@ scale_amount_curve = SubResource("Curve_01v4t")
 color_ramp = SubResource("Gradient_o77so")
 
 [node name="ShopBulding" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.9639, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4688, 0, 21.6533)
 
 [node name="Shop-1-shopBuilding2" type="MeshInstance3D" parent="ShopBulding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29307, 4.00542, 7.67621)
@@ -136,15 +139,12 @@ skeleton = NodePath("../../Plane")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.14095, -5.35234, 3.75714, 8.18517)
 shape = SubResource("BoxShape3D_umhn1")
 
-[node name="KURENAI_lowpoly" parent="." instance=ExtResource("6_vjdp0")]
-transform = Transform3D(1, 0.000712248, -3.90502e-06, -0.000712245, 1, 0.00059022, 4.31498e-06, -0.000590217, 1, -18.8051, 0.525806, -3.40103)
-
 [node name="KurenaiLowpoly" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.6877, 0.44442, -2.06601)
+transform = Transform3D(-0.997586, 0, 0.069443, 0, 1, 0, -0.069443, 0, -0.997586, -17.6877, 0.44442, 24.0922)
 mesh = ExtResource("7_k5ey0")
 
 [node name="Wall" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48.2672, 2.64776, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.39724, 35.9117, 2.24806, -11.9625)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
 transform = Transform3D(0.424292, 0, 0, 0, 5.12903, 0, 0, 0, 29.641, 0.223629, 0.753106, 4.88636)
@@ -153,67 +153,80 @@ mesh = SubResource("BoxMesh_6c3eu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 
 [node name="Plane2" type="StaticBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -239.112)
+transform = Transform3D(0.110771, 0, 0, 0, 1, 0, 0, 0, 0.181596, 0, 0, -156.615)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
-transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, -1.13159)
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, 481.888)
 shape = SubResource("BoxShape3D_aq12j")
 
 [node name="Plane3D" type="MeshInstance3D" parent="Plane2"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 483.02)
 mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
 
-[node name="Teleport" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.3393, -120.873)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
-transform = Transform3D(13.9174, 0, 0, 0, 1, 0, 0, 0, 2.58115, 0, -18.7782, -14.8136)
-shape = SubResource("BoxShape3D_d73yt")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport"]
-transform = Transform3D(16.88, 0, 0, 0, 1, 0, 0, 0, 4.13672, 0.12608, -18.5965, -14.9129)
-mesh = SubResource("BoxMesh_u87hl")
-
 [node name="Spawn1" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.11629, 1.71456, -0.964226)
+transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, 30.9022, 0.584149, -30.1584)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Spawn1"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15323, 0)
+transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 0, -1.31251, 0)
 mesh = SubResource("PlaneMesh_u7jj0")
 
 [node name="Timer" type="Timer" parent="Spawn1"]
 autostart = true
 
-[node name="Spawn2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.46281, 1.71456, -0.964226)
+[node name="UI" type="CanvasLayer" parent="."]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn2"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.15323, 0)
-mesh = SubResource("PlaneMesh_u7jj0")
-
-[node name="Spawn3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.08769, 1.67089, -3.98742)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn3"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8963, -1.12432, -2.11726)
-mesh = SubResource("PlaneMesh_u7jj0")
-
-[node name="UserInterface" type="CanvasLayer" parent="."]
-
-[node name="ScoreText" type="Label" parent="UserInterface"]
+[node name="ScoreText" type="Label" parent="UI"]
 offset_left = 13.0
 offset_top = 11.0
 offset_right = 334.0
 offset_bottom = 159.0
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Score"
 
-[connection signal="body_entered" from="Teleport" to="Player" method="_on_teleport_body_entered"]
+[node name="Stamina" type="ProgressBar" parent="UI"]
+offset_left = 14.0
+offset_top = 600.0
+offset_right = 261.0
+offset_bottom = 640.0
+
+[node name="Teleport" type="Area3D" parent="."]
+transform = Transform3D(3.5514, 0, 0, 0, 0.402, 0, 0, 0, 3.363, -2.73403, 0, -45.3372)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Teleport"]
+mesh = SubResource("TubeTrailMesh_hqw7a")
+surface_material_override/0 = SubResource("StandardMaterial3D_hbebs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
+shape = SubResource("BoxShape3D_6txjf")
+
+[node name="Spawn2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, -30.8834, 0.584149, -30.1584)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn2"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn2/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 0, -1.31251, 0)
+mesh = SubResource("PlaneMesh_u7jj0")
+
+[node name="Timer" type="Timer" parent="Spawn2"]
+autostart = true
+
+[node name="Spawn3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, -23.6051, 0.584149, 22.9846)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Spawn3"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 0, -1.31251, 0)
+mesh = SubResource("PlaneMesh_u7jj0")
+
+[node name="Timer" type="Timer" parent="Spawn3"]
+autostart = true
+
 [connection signal="timeout" from="Spawn1/Timer" to="." method="_on_timer_timeout"]
+[connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
+[connection signal="timeout" from="Spawn2/Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Spawn3/Timer" to="." method="_on_timer_timeout"]

@@ -1,8 +1,9 @@
-Label
-CanvasLayer
 CollisionShape3D
-Area3D
-Timer
 MeshInstance3D
 StaticBody3D
+Area3D
+CanvasLayer
+ProgressBar
+Label
+Timer
 Node3D

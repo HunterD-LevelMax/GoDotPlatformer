@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://xcmfnx7ibmvg"
+path="res://.godot/imported/KURENAI_lowpoly.obj-506b506e52cdbb7b1345454e88e6673c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/KURENAI_lowpoly.obj-506b506e52cdbb7b1345454e88e6673c.mesh"]
+
+source_file="res://Assets/kurenai_asset/KURENAI_lowpoly.obj"
+dest_files=["res://.godot/imported/KURENAI_lowpoly.obj-506b506e52cdbb7b1345454e88e6673c.mesh", "res://.godot/imported/KURENAI_lowpoly.obj-506b506e52cdbb7b1345454e88e6673c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
