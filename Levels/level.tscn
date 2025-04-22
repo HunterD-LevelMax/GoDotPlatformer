@@ -26,8 +26,8 @@ sky_material = SubResource("ProceduralSkyMaterial_1720a")
 [sub_resource type="Environment" id="Environment_4qk0s"]
 background_mode = 2
 sky = SubResource("Sky_i3p8v")
-tonemap_mode = 2
-tonemap_exposure = 1.8
+tonemap_mode = 3
+tonemap_exposure = 1.57
 
 [sub_resource type="BoxMesh" id="BoxMesh_1p1gu"]
 

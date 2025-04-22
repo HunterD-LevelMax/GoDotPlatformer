@@ -1,8 +1,8 @@
-Node
-MeshInstance3D
 CollisionShape3D
-StaticBody3D
 Area3D
+MeshInstance3D
+StaticBody3D
+Node
 CanvasLayer
 ProgressBar
 Label

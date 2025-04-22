@@ -15,3 +15,5 @@ res://Levels/platform_generator.tscn
 res://Levels/platform_generator.gd
 res://Assets/Platform/platform.gd
 res://Assets/Platform/platform.tscn
+res://Assets/Platform/win_platform.tscn
+res://Assets/Platform/win_platform.gd
