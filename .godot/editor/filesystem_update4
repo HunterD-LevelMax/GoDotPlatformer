@@ -1,0 +1,17 @@
+res://Assets/Platform/box.tscn
+res://Player/player.tscn
+res://Levels/level.tscn
+res://Player/player.gd
+res://Levels/level.gd
+res://Levels/win_box.tscn
+res://Assets/Platform/moving_box.tscn
+res://Assets/Platform/moving_box.gd
+res://Assets/Platform/win_box.tscn
+res://Assets/Platform/win_box.gd
+res://Assets/Platform/base_platform.gd
+res://Assets/Platform/box.gd
+res://PlatformGenerator.gd
+res://Levels/platform_generator.tscn
+res://Levels/platform_generator.gd
+res://Assets/Platform/platform.gd
+res://Assets/Platform/platform.tscn

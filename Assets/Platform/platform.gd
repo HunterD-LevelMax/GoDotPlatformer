@@ -1,9 +1,9 @@
 extends StaticBody3D
 
-signal box_destroyed
+signal platform_destroyed
 
-const COLOR_A = Color(1, 0, 0)    # Красный
-const COLOR_B = Color(1, 1, 0)    # Жёлтый
+const COLOR_A = Color(0.6, 0.8, 1)    # Светло-голубой
+const COLOR_B = Color(1, 0.8, 0.6)    # Светло-оранжевый
 
 var is_blinking = false
 
@@ -24,7 +24,7 @@ func blink_and_destroy() -> void:
 	var mesh = $MeshInstance3D
 	var mat = mesh.material_override if mesh.material_override else mesh.get_active_material(0)
 	var blink_time := 3.0
-	var interval := 0.1
+	var interval := 0.5
 	var t := 0.0
 	var color_toggle := false
 
@@ -33,7 +33,7 @@ func blink_and_destroy() -> void:
 		color_toggle = not color_toggle
 		await get_tree().create_timer(interval).timeout
 		t += interval
-		
-	emit_signal("box_destroyed")  # Сигнал о разрушении
+	
+	emit_signal("platform_destroyed")  # Сигнал о разрушении
 	
 	queue_free()

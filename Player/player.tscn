@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://draoidsqq725s"]
+[gd_scene load_steps=16 format=4 uid="uid://draoidsqq725s"]
 
 [ext_resource type="Script" path="res://Player/player.gd" id="1_4ufsh"]
 [ext_resource type="Texture2D" uid="uid://b7xe5j4d180uf" path="res://Player/human_man_warrior.png.001.png" id="2_of1h7"]
 [ext_resource type="AnimationLibrary" uid="uid://dfqtin3pwb3gt" path="res://Player/Jump.fbx" id="3_emq0m"]
 [ext_resource type="AnimationLibrary" uid="uid://001ptkiyupor" path="res://Player/Running.fbx" id="3_lwrsy"]
+[ext_resource type="AnimationLibrary" uid="uid://bsmw35o0vr3qp" path="res://Player/Falling Idle.fbx" id="3_v1ehw"]
 [ext_resource type="Script" path="res://Scripts/camera_spring_arm.gd" id="5_6l1ct"]
 [ext_resource type="Script" path="res://Scripts/camera_follow.gd" id="6_irep3"]
 
@@ -592,6 +593,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_ymukp")
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Skin"]
 libraries = {
 "Global": SubResource("AnimationLibrary_i1tej"),
+"fall": ExtResource("3_v1ehw"),
 "jump": ExtResource("3_emq0m"),
 "running": ExtResource("3_lwrsy")
 }

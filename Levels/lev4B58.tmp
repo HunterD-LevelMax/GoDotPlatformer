@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=27 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/texture_01.png" id="1_eopvo"]
@@ -7,16 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dndrsx7f1hgg7" path="res://Assets/Shop-0-ShopBuilding_1.png" id="4_3ntly"]
 [ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Assets/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
 [ext_resource type="ArrayMesh" uid="uid://xcmfnx7ibmvg" path="res://Assets/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
-[ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Levels/platform_generator.tscn" id="8_nbnl2"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ldbch"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_stmqa"]
-albedo_texture = ExtResource("1_eopvo")
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_msg5t"]
-material = SubResource("StandardMaterial3D_stmqa")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
 
@@ -27,7 +17,19 @@ sky_material = SubResource("ProceduralSkyMaterial_1720a")
 background_mode = 2
 sky = SubResource("Sky_i3p8v")
 tonemap_mode = 2
-tonemap_exposure = 1.8
+tonemap_exposure = 1.09
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
+size = Vector3(1.70752, 0.408691, 2.01208)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diinv"]
+albedo_texture = ExtResource("1_eopvo")
+uv1_triplanar = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ep3b"]
+lightmap_size_hint = Vector2i(14, 21)
+material = SubResource("StandardMaterial3D_diinv")
+size = Vector3(10, 1, 10)
 
 [sub_resource type="BoxMesh" id="BoxMesh_1p1gu"]
 
@@ -62,6 +64,8 @@ metallic = 0.16
 [sub_resource type="BoxShape3D" id="BoxShape3D_umhn1"]
 size = Vector3(14.8221, 6.54419, 2.86597)
 
+[sub_resource type="BoxMesh" id="BoxMesh_6c3eu"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxrh"]
 albedo_color = Color(0.745098, 0.117647, 0.0666667, 1)
 
@@ -75,36 +79,27 @@ albedo_color = Color(0.358563, 0.492831, 0.55788, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6txjf"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
-size = Vector3(1.70752, 0.408691, 2.01208)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diinv"]
-albedo_texture = ExtResource("1_eopvo")
-uv1_triplanar = true
-
-[sub_resource type="BoxMesh" id="BoxMesh_4ep3b"]
-lightmap_size_hint = Vector2i(14, 21)
-material = SubResource("StandardMaterial3D_diinv")
-size = Vector3(10, 1, 10)
-
 [node name="Level" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.70082, 0, 0)
 script = ExtResource("1_1ykia")
-
-[node name="Plane" type="StaticBody3D" parent="."]
-transform = Transform3D(80, 0, 0, 0, 1, 0, 0, 0, 80, 0, -0.073, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
-shape = SubResource("BoxShape3D_ldbch")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Plane"]
-mesh = SubResource("BoxMesh_msg5t")
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
 transform = Transform3D(0.999648, 0, -0.0265433, 0, 1, 0, 0.0265433, 0, 0.999648, -2.18498, 0.451721, -53.9276)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
+
+[node name="Plane" type="StaticBody3D" parent="."]
+transform = Transform3D(0.363437, 0, 0, 0, 0.790009, 0, 0, 0, 0.354411, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane"]
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, -1.13159)
+shape = SubResource("BoxShape3D_aq12j")
+
+[node name="Plane3D" type="MeshInstance3D" parent="Plane"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
+mesh = SubResource("BoxMesh_4ep3b")
+skeleton = NodePath("../..")
 
 [node name="palka" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.4337, -0.0827556, 26.6528)
@@ -138,7 +133,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.4688, 0, 21.6533)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.29307, 4.00542, 7.67621)
 material_override = SubResource("StandardMaterial3D_k6g2h")
 mesh = ExtResource("5_iqyun")
-skeleton = NodePath("")
+skeleton = NodePath("../../Plane")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ShopBulding"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.14095, -5.35234, 3.75714, 8.18517)
@@ -151,7 +146,23 @@ mesh = ExtResource("7_k5ey0")
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.39724, 35.9117, 2.24806, -11.9625)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(0.424292, 0, 0, 0, 5.12903, 0, 0, 0, 29.641, 0.223629, 0.753106, 4.88636)
+mesh = SubResource("BoxMesh_6c3eu")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
+
+[node name="Plane2" type="StaticBody3D" parent="."]
+transform = Transform3D(0.110771, 0, 0, 0, 1, 0, 0, 0, 0.181596, 0, 0, -156.615)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, 481.888)
+shape = SubResource("BoxShape3D_aq12j")
+
+[node name="Plane3D" type="MeshInstance3D" parent="Plane2"]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 483.02)
+mesh = SubResource("BoxMesh_4ep3b")
+skeleton = NodePath("../..")
 
 [node name="Spawn1" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, 30.9022, 0.584149, -30.1584)
@@ -174,14 +185,12 @@ offset_right = 334.0
 offset_bottom = 159.0
 theme_override_font_sizes/font_size = 25
 text = "Score"
-metadata/_edit_use_anchors_ = true
 
 [node name="Stamina" type="ProgressBar" parent="UI"]
-offset_left = 8.0
-offset_top = 94.0
-offset_right = 255.0
-offset_bottom = 134.0
-metadata/_edit_use_anchors_ = true
+offset_left = 14.0
+offset_top = 600.0
+offset_right = 261.0
+offset_bottom = 640.0
 
 [node name="Teleport" type="Area3D" parent="."]
 transform = Transform3D(3.5514, 0, 0, 0, 0.402, 0, 0, 0, 3.363, -2.73403, 0, -45.3372)
@@ -216,20 +225,6 @@ mesh = SubResource("PlaneMesh_u7jj0")
 
 [node name="Timer" type="Timer" parent="Spawn3"]
 autostart = true
-
-[node name="Plane2" type="StaticBody3D" parent="."]
-transform = Transform3D(0.10276, 0, 0, 0, 0.582211, 0, 0, 0, 0.0782564, -2.5505, 0, -57.0326)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane2"]
-transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, -1.11523, 0.282838, -1.13159)
-shape = SubResource("BoxShape3D_aq12j")
-
-[node name="Plane3D" type="MeshInstance3D" parent="Plane2"]
-transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
-mesh = SubResource("BoxMesh_4ep3b")
-skeleton = NodePath("../..")
-
-[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
 [connection signal="timeout" from="Spawn1/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

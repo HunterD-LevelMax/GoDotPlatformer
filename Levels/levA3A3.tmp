@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dndrsx7f1hgg7" path="res://Assets/Shop-0-ShopBuilding_1.png" id="4_3ntly"]
 [ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Assets/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
 [ext_resource type="ArrayMesh" uid="uid://xcmfnx7ibmvg" path="res://Assets/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
-[ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Levels/platform_generator.tscn" id="8_nbnl2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldbch"]
 
@@ -27,7 +26,7 @@ sky_material = SubResource("ProceduralSkyMaterial_1720a")
 background_mode = 2
 sky = SubResource("Sky_i3p8v")
 tonemap_mode = 2
-tonemap_exposure = 1.8
+tonemap_exposure = 1.09
 
 [sub_resource type="BoxMesh" id="BoxMesh_1p1gu"]
 
@@ -61,6 +60,8 @@ metallic = 0.16
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_umhn1"]
 size = Vector3(14.8221, 6.54419, 2.86597)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6c3eu"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxrh"]
 albedo_color = Color(0.745098, 0.117647, 0.0666667, 1)
@@ -151,6 +152,10 @@ mesh = ExtResource("7_k5ey0")
 [node name="Wall" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2.39724, 35.9117, 2.24806, -11.9625)
 
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall"]
+transform = Transform3D(0.424292, 0, 0, 0, 5.12903, 0, 0, 0, 29.641, 0.223629, 0.753106, 4.88636)
+mesh = SubResource("BoxMesh_6c3eu")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 
 [node name="Spawn1" type="Node3D" parent="."]
@@ -174,14 +179,12 @@ offset_right = 334.0
 offset_bottom = 159.0
 theme_override_font_sizes/font_size = 25
 text = "Score"
-metadata/_edit_use_anchors_ = true
 
 [node name="Stamina" type="ProgressBar" parent="UI"]
-offset_left = 8.0
-offset_top = 94.0
-offset_right = 255.0
-offset_bottom = 134.0
-metadata/_edit_use_anchors_ = true
+offset_left = 14.0
+offset_top = 600.0
+offset_right = 261.0
+offset_bottom = 640.0
 
 [node name="Teleport" type="Area3D" parent="."]
 transform = Transform3D(3.5514, 0, 0, 0, 0.402, 0, 0, 0, 3.363, -2.73403, 0, -45.3372)
@@ -228,8 +231,6 @@ shape = SubResource("BoxShape3D_aq12j")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
-
-[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
 [connection signal="timeout" from="Spawn1/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

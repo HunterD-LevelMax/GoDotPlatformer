@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=29 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Levels/level.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/texture_01.png" id="1_eopvo"]
@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://dndrsx7f1hgg7" path="res://Assets/Shop-0-ShopBuilding_1.png" id="4_3ntly"]
 [ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Assets/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
 [ext_resource type="ArrayMesh" uid="uid://xcmfnx7ibmvg" path="res://Assets/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
-[ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Levels/platform_generator.tscn" id="8_nbnl2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldbch"]
 
@@ -27,7 +26,7 @@ sky_material = SubResource("ProceduralSkyMaterial_1720a")
 background_mode = 2
 sky = SubResource("Sky_i3p8v")
 tonemap_mode = 2
-tonemap_exposure = 1.8
+tonemap_exposure = 1.09
 
 [sub_resource type="BoxMesh" id="BoxMesh_1p1gu"]
 
@@ -228,8 +227,6 @@ shape = SubResource("BoxShape3D_aq12j")
 transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 20, 0, 0, 0)
 mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
-
-[node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
 [connection signal="timeout" from="Spawn1/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
