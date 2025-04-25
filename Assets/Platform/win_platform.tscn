@@ -12,6 +12,7 @@ emission = Color(0.73567, 0.52441, 0.289562, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_43y5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_cxybm"]
+size = Vector3(0.93602, 0.444336, 0.94783)
 
 [node name="StaticBody3D" type="StaticBody3D"]
 transform = Transform3D(2.44282, 0, 0, 0, 0.173786, 0, 0, 0, 2.75227, 0, 0, 0)
@@ -27,6 +28,7 @@ shape = SubResource("BoxShape3D_43y5w")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.04323, 0, 0, 0, 2.20584, 0, 0, 0, 1.03637, 0.00422633, 0.612854, -0.0017158)
 shape = SubResource("BoxShape3D_cxybm")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://i5omfkikpmio"
+path="res://.godot/imported/character_bearArmLeft.obj-ab8c10cda0ece91175c307530d1ae398.mesh"
+
+[deps]
+
+files=["res://.godot/imported/character_bearArmLeft.obj-ab8c10cda0ece91175c307530d1ae398.mesh"]
+
+source_file="res://Assets/Min_Game/Characters/Bear/obj/character_bearArmLeft.obj"
+dest_files=["res://.godot/imported/character_bearArmLeft.obj-ab8c10cda0ece91175c307530d1ae398.mesh", "res://.godot/imported/character_bearArmLeft.obj-ab8c10cda0ece91175c307530d1ae398.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

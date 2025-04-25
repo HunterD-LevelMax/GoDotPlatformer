@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://kvgl4i145tpc"
+path="res://.godot/imported/Shop-1-ShopBuilding_2.obj-892c37d28ac3b930c1f6a81c0ab279ea.mesh"
+
+[deps]
+
+files=["res://.godot/imported/Shop-1-ShopBuilding_2.obj-892c37d28ac3b930c1f6a81c0ab279ea.mesh"]
+
+source_file="res://Assets/kurenai_asset/Shop-1-ShopBuilding_2.obj"
+dest_files=["res://.godot/imported/Shop-1-ShopBuilding_2.obj-892c37d28ac3b930c1f6a81c0ab279ea.mesh", "res://.godot/imported/Shop-1-ShopBuilding_2.obj-892c37d28ac3b930c1f6a81c0ab279ea.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
