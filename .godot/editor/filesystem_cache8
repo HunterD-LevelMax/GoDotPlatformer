@@ -1,21 +1,21 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1745564572
+::res://::1745682526
 export_presets.cfg::TextFile::-1::1745351061::0::1::::<><>::
 icon.svg::CompressedTexture2D::4785134834077917364::1745237256::1745237354::1::::<><>::
 README.md::TextFile::-1::1745237256::0::1::::<><>::
 ::res://Assets/::1745518190
-::res://Assets/BonusItems/::1745520784
+::res://Assets/BonusItems/::1745660522
 jump_bonus.gd::GDScript::-1::1745505469::0::1::::<>Area3D<>::
-Jump_bonus.tscn::PackedScene::3730334431923314426::1745520784::0::1::::<><>::res://Assets/BonusItems/jump_bonus.gd
+Jump_bonus.tscn::PackedScene::3730334431923314426::1745660522::0::1::::<><>::res://Assets/BonusItems/jump_bonus.gd
 ::res://Assets/kurenai_asset/::1745515898
 KURENAI_lowpoly.blend::PackedScene::1283193976129520447::1745237256::1745237408::1::::<><>::
 KURENAI_lowpoly.obj::Mesh::3138551699541339926::1745237256::1745515898::1::::<><>::
 Shop-1-ShopBuilding_2.obj::Mesh::745625851661997644::1745237256::1745515898::1::::<><>::
-::res://Assets/Levels/::1745520784
-level.gd::GDScript::-1::1745520028::0::1::::<>Node3D<>::
-level.tscn::PackedScene::7330726424307335354::1745520784::0::1::::<><>::res://Assets/Levels/level.gd<>uid://m0xed4dwmc2w::::res://Assets/Textures/texture_01.png<>uid://draoidsqq725s::::res://Assets/Player/player.tscn<>uid://cr4ts3luulbx0::::res://Assets/Textures/fire.png<>uid://dndrsx7f1hgg7::::res://Assets/Textures/Shop-0-ShopBuilding_1.png<>uid://kvgl4i145tpc::::res://Assets/kurenai_asset/Shop-1-ShopBuilding_2.obj<>uid://bkylquceg5rww::::res://Assets/kurenai_asset/KURENAI_lowpoly.obj<>uid://b1rucljvmkffl::::res://Assets/Levels/platform_generator.tscn<>uid://8rm6h32psd0v::::res://Assets/Platform/standart_platform.tscn
-platform_generator.gd::GDScript::-1::1745520750::0::1::::PlatformGenerator<>Node<>::
-platform_generator.tscn::PackedScene::4247643544174768569::1745520784::0::1::::<><>::res://Assets/Levels/platform_generator.gd
+::res://Assets/Levels/::1745660522
+level.gd::GDScript::-1::1745582119::0::1::::<>Node3D<>::
+level.tscn::PackedScene::7330726424307335354::1745660522::0::1::::<><>::res://Assets/Levels/level.gd<>uid://m0xed4dwmc2w::::res://Assets/Textures/texture_01.png<>uid://draoidsqq725s::::res://Assets/Player/player.tscn<>uid://cr4ts3luulbx0::::res://Assets/Textures/fire.png<>uid://dndrsx7f1hgg7::::res://Assets/Textures/Shop-0-ShopBuilding_1.png<>uid://kvgl4i145tpc::::res://Assets/kurenai_asset/Shop-1-ShopBuilding_2.obj<>uid://bkylquceg5rww::::res://Assets/kurenai_asset/KURENAI_lowpoly.obj<>uid://b1rucljvmkffl::::res://Assets/Levels/platform_generator.tscn<>uid://8rm6h32psd0v::::res://Assets/Platform/standart_platform.tscn
+platform_generator.gd::GDScript::-1::1745581955::0::1::::PlatformGenerator<>Node<>::
+platform_generator.tscn::PackedScene::4247643544174768569::1745660522::0::1::::<><>::res://Assets/Levels/platform_generator.gd
 ::res://Assets/Min_Game/::1745516467
 ::res://Assets/Min_Game/Characters/::1745516467
 ::res://Assets/Min_Game/Characters/Bear/::1745516467
@@ -186,20 +186,20 @@ tileSmall_teamRed.gltf.glb::PackedScene::7790580373226883319::1745516455::174551
 tileSmall_teamYellow.gltf.glb::PackedScene::7001549995886270797::1745516455::1745516457::1::::<><>::
 tree_desert.gltf.glb::PackedScene::3387355706805138916::1745516455::1745516457::1::::<><>::
 tree_forest.gltf.glb::PackedScene::853777749114944208::1745516455::1745516457::1::::<><>::
-::res://Assets/Platform/::1745520784
+::res://Assets/Platform/::1745660522
 platform.gd::GDScript::-1::1745516819::0::1::::<>StaticBody3D<>::
-platform.tscn::PackedScene::7057824367095262190::1745520783::0::1::::<><>::res://Assets/Platform/platform.gd<>uid://m0xed4dwmc2w::::res://Assets/Textures/texture_01.png
+platform.tscn::PackedScene::7057824367095262190::1745660522::0::1::::<><>::res://Assets/Platform/platform.gd<>uid://m0xed4dwmc2w::::res://Assets/Textures/texture_01.png
 standart_platform.gd::GDScript::-1::1745517630::0::1::::<>StaticBody3D<>::
-standart_platform.tscn::PackedScene::2352110637563822163::1745520784::0::1::::<><>::res://Assets/Platform/standart_platform.gd
+standart_platform.tscn::PackedScene::2352110637563822163::1745660522::0::1::::<><>::res://Assets/Platform/standart_platform.gd
 win_platform.gd::GDScript::-1::1745429413::0::1::::<>StaticBody3D<>::
-win_platform.tscn::PackedScene::2497910159310153924::1745520784::0::1::::<><>::res://Assets/Platform/win_platform.gd
-::res://Assets/Player/::1745520784
+win_platform.tscn::PackedScene::2497910159310153924::1745660522::0::1::::<><>::res://Assets/Platform/win_platform.gd
+::res://Assets/Player/::1745660522
 Falling Idle.fbx::AnimationLibrary::3675979776789016471::1745344713::1745518191::1::::<><>::
 human_man_warrior.png.001.png::CompressedTexture2D::4680241327923581913::1745237256::1745518191::1::::<><>::
 Idle.fbx::PackedScene::5280394868231619814::1745237256::1745518191::1::::<><>::
 Jump.fbx::AnimationLibrary::7544404949317301655::1745237256::1745518191::1::::<><>::
 player.gd::GDScript::-1::1745505461::0::1::::<>CharacterBody3D<>::
-player.tscn::PackedScene::8353336903301991418::1745520784::0::1::::<><>::res://Assets/Player/player.gd<>uid://b7xe5j4d180uf::::res://Assets/Player/human_man_warrior.png.001.png<>uid://dfqtin3pwb3gt::::res://Assets/Player/Jump.fbx<>uid://001ptkiyupor::::res://Assets/Player/Running.fbx<>uid://bsmw35o0vr3qp::::res://Assets/Player/Falling Idle.fbx<>res://Assets/Scripts/camera_spring_arm.gd<>res://Assets/Scripts/camera_follow.gd
+player.tscn::PackedScene::8353336903301991418::1745660522::0::1::::<><>::res://Assets/Player/player.gd<>uid://b7xe5j4d180uf::::res://Assets/Player/human_man_warrior.png.001.png<>uid://dfqtin3pwb3gt::::res://Assets/Player/Jump.fbx<>uid://001ptkiyupor::::res://Assets/Player/Running.fbx<>uid://bsmw35o0vr3qp::::res://Assets/Player/Falling Idle.fbx<>res://Assets/Scripts/camera_spring_arm.gd<>res://Assets/Scripts/camera_follow.gd
 player_old.txt::TextFile::-1::1745431131::0::1::::<><>::
 Running.fbx::AnimationLibrary::1807936977310861769::1745237256::1745518191::1::::<><>::
 ::res://Assets/Scripts/::1745241299

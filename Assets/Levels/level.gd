@@ -1,6 +1,6 @@
 extends Node3D
 
-# Node references
+# Ноды
 @onready var player = $Player
 @onready var score_text = $UI/ScoreText
 @onready var platform_generator = $PlatformGenerator
@@ -19,9 +19,9 @@ func _ready() -> void:
 
 	# Генерация кластерного пути с задержкой
 	await platform_generator.spawn_clustered_path_with_coroutines({
-		"layer_count": 20,
-		"cluster_size": 5,
-		"horizontal_spacing": 8,
+		"layer_count": 10,
+		"cluster_size": 6,
+		"horizontal_spacing": 7,
 		"vertical_spacing": 1.9,
 		"chaos": 1.0, # 0 - аккуратно, 1 - хаос
 		"difficulty": 1.0, # от 0.5 до 2.0

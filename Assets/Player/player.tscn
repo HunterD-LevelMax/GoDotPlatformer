@@ -346,7 +346,7 @@ radius = 0.3
 script = ExtResource("1_4ufsh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0192826, 0.603822, 0)
+transform = Transform3D(1, 0, 0, 0, 0.959491, 0.281739, 0, -0.281739, 0.959491, 0.0192826, 0.528496, 0)
 shape = SubResource("CapsuleShape3D_irfwq")
 
 [node name="Skin" type="Node3D" parent="."]

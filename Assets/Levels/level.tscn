@@ -22,12 +22,12 @@ material = SubResource("StandardMaterial3D_stmqa")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
 
-[sub_resource type="Sky" id="Sky_i3p8v"]
+[sub_resource type="Sky" id="Sky_djda4"]
 sky_material = SubResource("ProceduralSkyMaterial_1720a")
 
 [sub_resource type="Environment" id="Environment_4qk0s"]
 background_mode = 2
-sky = SubResource("Sky_i3p8v")
+sky = SubResource("Sky_djda4")
 tonemap_mode = 3
 tonemap_exposure = 1.57
 
@@ -79,7 +79,7 @@ albedo_color = Color(0.745098, 0.117647, 0.0666667, 1)
 material = SubResource("StandardMaterial3D_bfxrh")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
-size = Vector3(1.70752, 0.408691, 2.01208)
+size = Vector3(1.70752, 1.0152, 1.99917)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_diinv"]
 albedo_texture = ExtResource("1_eopvo")
@@ -103,7 +103,7 @@ shape = SubResource("BoxShape3D_ldbch")
 mesh = SubResource("BoxMesh_msg5t")
 
 [node name="Player" parent="." instance=ExtResource("2_1pnx1")]
-transform = Transform3D(0.999648, 0, -0.0265433, 0, 1, 0, 0.0265433, 0, 0.999648, 0, 0.37569, -53.928)
+transform = Transform3D(0.999648, 0, -0.0265433, 0, 1, 0, 0.0265433, 0, 0.999648, -0.0079937, 0.287808, -53.9433)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_4qk0s")
@@ -214,7 +214,7 @@ mesh = SubResource("PlaneMesh_u7jj0")
 transform = Transform3D(0.0533031, 0, 0, 0, 0.582211, 0, 0, 0, 0.0410791, 0, 0, -54.847)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StartPlane"]
-transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, 0, 0, 0)
+transform = Transform3D(117.128, 0, 0, 0, 1, 0, 0, 0, 100, 0, -0.00674434, 0.150879)
 shape = SubResource("BoxShape3D_aq12j")
 
 [node name="Plane3D" type="MeshInstance3D" parent="StartPlane"]
