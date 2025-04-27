@@ -20,7 +20,7 @@ func _ready() -> void:
 
 	# Генерация кластерного пути с задержкой
 	await platform_generator.spawn_clustered_path_with_coroutines({
-		"layer_count": 40,
+		"layer_count":10,
 		"cluster_size": 6.0, 
 		"horizontal_spacing": 7.0,
 		"vertical_spacing": 1.9,
