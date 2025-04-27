@@ -75,7 +75,7 @@ shadow_mesh = SubResource("ArrayMesh_hiasu")
 size = Vector3(1.9856, 1, 1.99707)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_2lq37"]
-size = Vector3(1.64802, 0.123337, 1.26873)
+size = Vector3(1.64802, 0.123337, 1.04326)
 
 [node name="StandartPlatform" type="StaticBody3D"]
 script = ExtResource("1_qdiki")
@@ -91,7 +91,7 @@ shape = SubResource("BoxShape3D_jedtb")
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1.45975, 0, 0, 0, 1.45975, 0, 0, 0, 1.45975, -0.0105782, 0.938326, 0.0140449)
+transform = Transform3D(1.45975, 0, 0, 0, 1.45975, 0, 0, 0, 1.45975, -0.0105782, 0.938326, 0.0238135)
 shape = SubResource("BoxShape3D_2lq37")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

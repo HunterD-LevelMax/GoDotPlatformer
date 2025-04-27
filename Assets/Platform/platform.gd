@@ -1,6 +1,6 @@
 extends StaticBody3D
 
-signal platform_destroyed
+signal add_coin
 
 const COLOR_A = Color(0.6, 0.8, 1)    # Светло-голубой
 const COLOR_B = Color(1, 0.8, 0.6)    # Светло-оранжевый

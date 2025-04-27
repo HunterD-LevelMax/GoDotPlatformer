@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbuahk8c3d7ky"]
+[gd_scene load_steps=7 format=3 uid="uid://bbuahk8c3d7ky"]
 
 [ext_resource type="Script" path="res://Assets/Platform/win_platform.gd" id="1_ejpty"]
+[ext_resource type="PackedScene" uid="uid://dx2p3wc8mcpi7" path="res://Assets/tung_tung_sahur/scene.gltf" id="2_mc5kg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qo0n7"]
 albedo_color = Color(0.743248, 0.576769, 0.345277, 1)
@@ -30,5 +31,8 @@ shape = SubResource("BoxShape3D_43y5w")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1.04323, 0, 0, 0, 2.20584, 0, 0, 0, 1.03637, 0.00422633, 0.612854, -0.0017158)
 shape = SubResource("BoxShape3D_cxybm")
+
+[node name="Sketchfab_Scene" parent="." instance=ExtResource("2_mc5kg")]
+transform = Transform3D(0.409363, 0, 0, 0, 5.7542, 0, 0, 0, 0.363336, -0.0104285, 6.24892, -0.22797)
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

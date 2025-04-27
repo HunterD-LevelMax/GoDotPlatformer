@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=31 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Assets/Levels/level.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
@@ -20,6 +20,10 @@ uv1_world_triplanar = true
 material = SubResource("StandardMaterial3D_stmqa")
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_1720a"]
+sky_top_color = Color(0.403179, 0.613818, 0.811747, 1)
+ground_bottom_color = Color(0.26187, 0.354083, 0.447606, 1)
+ground_horizon_color = Color(0.445359, 0.695613, 0.799697, 1)
+sun_angle_max = 27.66
 
 [sub_resource type="Sky" id="Sky_djda4"]
 sky_material = SubResource("ProceduralSkyMaterial_1720a")
@@ -71,12 +75,6 @@ uv1_triplanar = true
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_4x75r"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bfxrh"]
-albedo_color = Color(0.745098, 0.117647, 0.0666667, 1)
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_u7jj0"]
-material = SubResource("StandardMaterial3D_bfxrh")
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_aq12j"]
 size = Vector3(1.70752, 1.0152, 1.99917)
 
@@ -88,6 +86,15 @@ uv1_triplanar = true
 lightmap_size_hint = Vector2i(14, 21)
 material = SubResource("StandardMaterial3D_diinv")
 size = Vector3(10, 1, 10)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dvyqq"]
+albedo_color = Color(0.841564, 0, 0.0678221, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fw7u1"]
+material = SubResource("StandardMaterial3D_dvyqq")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2n3jm"]
+size = Vector3(6.00439, 1, 4.16125)
 
 [node name="Level" type="Node3D"]
 script = ExtResource("1_1ykia")
@@ -182,33 +189,6 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hbebs")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Teleport"]
 shape = SubResource("CylinderShape3D_4x75r")
 
-[node name="Spawn1" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, 19.2468, 0.667603, 21.7954)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn1"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn1/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 3.74787, -1.31251, 1.21614)
-mesh = SubResource("PlaneMesh_u7jj0")
-
-[node name="Spawn2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, 19.2468, 0.667603, -21.2397)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn2"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn2/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 3.74333, -1.31251, -2.23776)
-mesh = SubResource("PlaneMesh_u7jj0")
-
-[node name="Spawn3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.114587, 0, 0, 0, 1, -24.6082, 0.667603, -21.2397)
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Spawn3"]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1.33649, 0, 0, 0, 1, 1.63875, -1.31251, -1.69815)
-mesh = SubResource("PlaneMesh_u7jj0")
-
 [node name="StartPlane" type="StaticBody3D" parent="."]
 transform = Transform3D(0.0533031, 0, 0, 0, 0.582211, 0, 0, 0, 0.0410791, 0, 0, -54.847)
 
@@ -223,4 +203,30 @@ skeleton = NodePath("../..")
 
 [node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
 
+[node name="Spawn1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1302, 0.513379, -23.047)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn1"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="Spawn2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.047, 0.503228, -23.463)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn2"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="Spawn3" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.1302, 0.512572, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Spawn3"]
+mesh = SubResource("PlaneMesh_fw7u1")
+
+[node name="TeleportZone" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -88.0229, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TeleportZone"]
+transform = Transform3D(1000, 0, 0, 0, 1, 0, 0, 0, 1000, -15.4541, 0, 14.386)
+shape = SubResource("BoxShape3D_2n3jm")
+
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]
+[connection signal="body_entered" from="TeleportZone" to="." method="_on_teleport_zone_body_entered"]

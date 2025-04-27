@@ -11,3 +11,6 @@ res://Assets/Platform/win_platform.gd
 res://Assets/Platform/door.tscn
 res://Assets/Platform/door.gd
 res://Assets/Levels/platform_generator.gd
+res://Assets/Platform/coin.tscn
+res://Assets/Platform/coin.gd
+res://Assets/Platform/platform.gd

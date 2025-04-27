@@ -1,6 +1,6 @@
 CollisionShape3D
-Area3D
 MeshInstance3D
+Area3D
 StaticBody3D
 Node
 CanvasLayer
