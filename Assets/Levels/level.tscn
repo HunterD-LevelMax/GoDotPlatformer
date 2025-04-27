@@ -23,7 +23,7 @@ material = SubResource("StandardMaterial3D_stmqa")
 sky_top_color = Color(0.403179, 0.613818, 0.811747, 1)
 ground_bottom_color = Color(0.26187, 0.354083, 0.447606, 1)
 ground_horizon_color = Color(0.445359, 0.695613, 0.799697, 1)
-sun_angle_max = 27.66
+sun_angle_max = 0.0
 
 [sub_resource type="Sky" id="Sky_djda4"]
 sky_material = SubResource("ProceduralSkyMaterial_1720a")
@@ -31,8 +31,8 @@ sky_material = SubResource("ProceduralSkyMaterial_1720a")
 [sub_resource type="Environment" id="Environment_4qk0s"]
 background_mode = 2
 sky = SubResource("Sky_djda4")
-tonemap_mode = 3
-tonemap_exposure = 1.57
+tonemap_mode = 2
+tonemap_exposure = 1.32
 
 [sub_resource type="BoxMesh" id="BoxMesh_1p1gu"]
 

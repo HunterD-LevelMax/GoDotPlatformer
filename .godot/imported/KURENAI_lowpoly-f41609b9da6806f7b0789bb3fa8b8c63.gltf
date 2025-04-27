@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.2.69",
+		"generator":"Khronos glTF Blender I/O v4.2.70",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -1824,13 +1824,13 @@
 			"componentType":5126,
 			"count":138,
 			"max":[
-				0.9813860654830933,
+				0.9813860058784485,
 				0.38356611132621765,
 				0.9746266603469849
 			],
 			"min":[
 				-0.9746266603469849,
-				-0.7805514931678772,
+				-0.780551552772522,
 				-0.9746266603469849
 			],
 			"type":"VEC3"

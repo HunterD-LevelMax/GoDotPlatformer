@@ -3,9 +3,11 @@
 [ext_resource type="Script" path="res://Assets/Platform/coin.gd" id="1_vnj28"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjy2e"]
+metallic = 1.0
+metallic_specular = 0.54
 emission_enabled = true
 emission = Color(0.87415, 0.595586, 0, 1)
-emission_energy_multiplier = 2.66
+emission_energy_multiplier = 1.33
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_twa3g"]
 material = SubResource("StandardMaterial3D_cjy2e")
