@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://dcpb81d1t55qc"]
+[gd_scene load_steps=30 format=3 uid="uid://dcpb81d1t55qc"]
 
 [ext_resource type="Script" path="res://Assets/Levels/level.gd" id="1_1ykia"]
 [ext_resource type="Texture2D" uid="uid://m0xed4dwmc2w" path="res://Assets/Textures/texture_01.png" id="1_eopvo"]
@@ -8,7 +8,6 @@
 [ext_resource type="ArrayMesh" uid="uid://kvgl4i145tpc" path="res://Assets/kurenai_asset/Shop-1-ShopBuilding_2.obj" id="5_iqyun"]
 [ext_resource type="ArrayMesh" uid="uid://bkylquceg5rww" path="res://Assets/kurenai_asset/KURENAI_lowpoly.obj" id="7_k5ey0"]
 [ext_resource type="PackedScene" uid="uid://b1rucljvmkffl" path="res://Assets/Levels/platform_generator.tscn" id="8_nbnl2"]
-[ext_resource type="PackedScene" uid="uid://8rm6h32psd0v" path="res://Assets/Platform/standart_platform.tscn" id="9_dxj77"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ldbch"]
 
@@ -223,8 +222,5 @@ mesh = SubResource("BoxMesh_4ep3b")
 skeleton = NodePath("../..")
 
 [node name="PlatformGenerator" parent="." instance=ExtResource("8_nbnl2")]
-
-[node name="StandartPlatform" parent="." instance=ExtResource("9_dxj77")]
-transform = Transform3D(1.2, 0, 0, 0, 1, 0, 0, 0, 1.2, 3.81099, 0.283644, -53.1339)
 
 [connection signal="body_entered" from="Teleport" to="." method="_on_teleport_body_entered"]

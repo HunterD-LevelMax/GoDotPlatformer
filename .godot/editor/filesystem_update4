@@ -1,11 +1,13 @@
-res://Assets/Levels/level.tscn
-res://Assets/Levels/level.gd
-res://Assets/Levels/menu.tscn
-res://Assets/Levels/menu.gd
 res://Assets/Platform/platform.tscn
 res://Assets/Player/player.tscn
+res://Assets/Levels/level.tscn
+res://Assets/Levels/menu.tscn
 res://Assets/Platform/win_platform.tscn
 res://Assets/BonusItems/Jump_bonus.tscn
 res://Assets/Levels/platform_generator.tscn
 res://Assets/Platform/standart_platform.tscn
+res://Assets/Levels/level.gd
 res://Assets/Platform/win_platform.gd
+res://Assets/Platform/door.tscn
+res://Assets/Platform/door.gd
+res://Assets/Levels/platform_generator.gd

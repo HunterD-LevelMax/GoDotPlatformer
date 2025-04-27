@@ -138,7 +138,7 @@ func _spawn_platform(position: Vector3, scale: Vector3, callback: Callable) -> N
 	
 	# Спавним бонус с 2% шансом
 	if randf() < 0.02:
-		spawn_bonus(jump_bonus,platform_instance.position + Vector3(0,1,0))
+		spawn_bonus(jump_bonus, platform_instance.position + Vector3(0,1,0))
 		
 	return platform_instance
 

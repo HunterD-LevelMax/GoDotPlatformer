@@ -19,12 +19,12 @@ func _ready() -> void:
 
 	# Генерация кластерного пути с задержкой
 	await platform_generator.spawn_clustered_path_with_coroutines({
-		"layer_count": 10,
-		"cluster_size": 6,
-		"horizontal_spacing": 7,
+		"layer_count": 40,
+		"cluster_size": 5.0,
+		"horizontal_spacing": 7.0,
 		"vertical_spacing": 1.9,
-		"chaos": 1.0, # 0 - аккуратно, 1 - хаос
-		"difficulty": 1.0, # от 0.5 до 2.0
+		"chaos": 0.6, # 0 - аккуратно, 1 - хаос
+		"difficulty": 1.4, # от 0.5 до 2.0
 		"scale": Vector3(1.2, 0.4, 1.9)
 	}, _on_platform_destroyed)
 
@@ -38,6 +38,13 @@ func _on_platform_destroyed() -> void:
 func _on_platform_win() -> void:
 	print("Победа! Игрок наступил на платформу победы.")
 	
+	var dialog = ConfirmationDialog.new()
+	dialog.title = "Выход"
+	dialog.dialog_text = "Ты молодец!"
+	add_child(dialog)
+	dialog.popup_centered()
+
+		
 func _restart_level() -> void:
 	get_tree().reload_current_scene()
 
